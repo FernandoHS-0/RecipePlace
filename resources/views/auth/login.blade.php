@@ -85,7 +85,7 @@
                                     </button>
                                 </div>
                                 <div class="row mb-5">
-                                    <a href="#" class="btn btnGoogle"><i class="bi bi-google align-middle" aria-hidden="true"></i> <span class="align-middle">Continuar con Google</span> </a>
+                                    <a href="{{url('/login-google')}}" class="btn btnGoogle"><i class="bi bi-google align-middle" aria-hidden="true"></i> <span class="align-middle">Continuar con Google</span> </a>
                                 </div>
                                 <div class="row mb-5">
                                     <a href="{{ route('register') }}" class="text-center text-white">¿Aún no eres usuario? Registrate.</a>
