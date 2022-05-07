@@ -2,18 +2,19 @@
 
 @section('content')
 
-    <div class="row">
-        <div class="col-3" style="background-color: #181926;">
-            @if ($usuario['avatar'] != null)
-                <img src="{{ asset($usuario['avatar']) }}" alt="Avatar" class="img-fluid" style="border-radius: 100%">
-            @else
-                <img src="{{ asset('img/avatar.png') }}" alt="Avatar" class="img-fluid">
-            @endif
+    <div class="container">
+        <div class="row mb-3" style="background-color: #181926;">
+            <div class="container pt-5">
+                @if ($usuario['avatar'] != null)
+                    <img src="{{ asset($usuario['avatar']) }}" alt="Avatar" class="img-fluid mb-4 mx-auto d-block" style="border-radius: 100%">
+                @else
+                    <img src="{{ asset('img/avatar.png') }}" alt="Avatar" class="img-fluid mb-4 mx-auto d-block">
+                @endif
 
-            <h2 class="text-white">{{$usuario['name']}}</h2>
+                <h2 class="text-white text-center mb-3">Recetas de: {{$usuario['name']}}</h2>
+            </div>
         </div>
-        <div class="col-9">
-            <h1>Recetas del usuario</h1>
+        <div class="row">
             <div class="row">
                 @foreach ($recetas as $receta)
                     <div class="col-lg-3 col-md-3 col-sm-12">
