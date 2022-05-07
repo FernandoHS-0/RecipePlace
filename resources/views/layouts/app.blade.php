@@ -27,13 +27,16 @@
         .btnBrightR{
             background-color: #D90404;
         }
+        .btnDarkR{
+            background-color: #731224;
+        }
     </style>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #181926;">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     <img src="{{asset('img/logo.png')}}" alt="ReciPlace" class="img-fluid" width="10%">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -68,6 +71,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a href="{{route('misRecetas')}}" class="dropdown-item">Mis recetas</a>
+                                    <a class="dropdown-item" href="{{route('publicar_receta')}}">Publicar receta</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -3,12 +3,13 @@
 @section('content')
     <div class="container">
         <h1>Publicar nueva receta</h1>
-        <form action="#" method="POST">
+        <form action="{{route('nuevaReceta')}}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="row">
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="titulo" class="form-label">Título</label>
-                            <input type="text" class="form-control" id="titulo">
+                            <input type="text" class="form-control" id="titulo" name="titulo">
                         </div>
                         <div class="mb-3">
                             <label for="descripcion" class="form-label">Descripción</label>
@@ -16,11 +17,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="tiempo" class="form-label">Tiempo de preparación</label>
-                            <input type="text" class="form-control" id="tiempo">
+                            <input type="text" class="form-control" id="tiempo" name="tiempo">
                         </div>
                         <div class="mb-3">
                             <label for="ingredientes" class="form-label">Ingredientes</label>
-                            <input type="text" class="form-control" id="ingredientes">
+                            <textarea class="form-control" id="ingredientes" name="ingredientes"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="instrucciones" class="form-label">Instrucciones</label>
@@ -41,7 +42,7 @@
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="multimedia" class="form-label">Multimedia</label>
-                            <input class="form-control" type="file" id="multimedia">
+                            <input class="form-control" type="file" id="multimedia" name="multimedia">
                         </div>
                         <div class="mb-3">
                             <button type="submit" class="btn btnBrightR text-white" style="width: 100%">Publicar receta</button>

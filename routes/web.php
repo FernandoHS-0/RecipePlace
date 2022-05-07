@@ -43,15 +43,34 @@ Route::get('/google-callback', function () {
         Auth::login($newUser);
     }
 
-    return redirect('/inicio');
+    return redirect('/home');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [RecetaController::class, 'showAll'])->name('home');
 
 Route::get('/inicio', [RecetaController::class, 'index'])->name('index');
 
 Route::get('/publicar_receta', [RecetaController::class, 'publicarReceta'])->name('publicar_receta');
+
+Route::get('/misRecetas', [RecetaController::class, 'misRecetas'])->name('misRecetas');
+
+Route::get('/detalleReceta/{id}', [RecetaController::class, 'show'])->name('detalleReceta');
+
+Route::get('/modificarReceta/{id}', [RecetaController::class, 'modificarReceta'])->name('modificarReceta');
+
+Route::get('/buscar', [RecetaController::class, 'buscar'])->name('buscar');
+
+Route::get('/filtrar', [RecetaController::class, 'filtrar'])->name('filtrar');
+
+Route::get('/perfilUsuario/{id}', [RecetaController::class, 'perfil'])->name('perfilUsuario');
+
+Route::post('/nuevaReceta', [RecetaController::class, 'store'])->name('nuevaReceta');
+
+Route::post('/actualizarReceta', [RecetaController::class, 'update'])->name('actualizar.receta');
+
+Route::post('/eliminarReceta', [RecetaController::class, 'destroy'])->name('eliminar.receta');
+
 
 
